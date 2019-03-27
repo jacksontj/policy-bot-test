@@ -16,8 +16,8 @@ approval_rules:
       count: 1
     options:
       invalidate_on_push: true
+      allow_author: true
       methods:
-        allow_author: true
         comments:
           - FORCE_COMMIT
         github_review: true
