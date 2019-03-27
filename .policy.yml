@@ -7,3 +7,19 @@ approval_rules:
     requires:
       count: 1
       users: ["jacksontj"]
+    methods:
+      github_review: true
+    options:
+      invalidate_on_push: true
+  - name: if release
+    if:
+      changed_files:
+        paths:
+          - release/.*"
+    requires:
+      count: 1
+      users: ["jacksontj"]
+    methods:
+      github_review: true
+    options:
+      invalidate_on_push: true
