@@ -21,7 +21,6 @@ approval_rules:
       methods:
         comments:
           - FORCE_COMMIT
-        github_review: true
   - name: one approval from jacksontj
     requires:
       count: 1
