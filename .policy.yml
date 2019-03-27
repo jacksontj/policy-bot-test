@@ -1,6 +1,7 @@
 policy:
   approval:
     - one approval from jacksontj
+    - if release
 
 approval_rules:
   - name: one approval from jacksontj
