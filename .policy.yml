@@ -1,7 +1,7 @@
 policy:
   approval:
     - or
-      - and
+      - and:
         - one approval from jacksontj
         - if release
       - FORCE_COMMIT
