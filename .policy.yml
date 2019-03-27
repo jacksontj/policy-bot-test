@@ -16,7 +16,7 @@ approval_rules:
     if:
       changed_files:
         paths:
-          - release/.*"
+          - "release/.*"
     requires:
       count: 1
       users: ["jacksontj"]
