@@ -1,9 +1,26 @@
 policy:
   approval:
-    - one approval from jacksontj
-    - if release
+    - or
+      - and
+        - one approval from jacksontj
+        - if release
+      - FORCE_COMMIT
 
 approval_rules:
+  - name: FORCE_COMMIT
+    if:
+      has_author_in:
+        users:
+          - jacksontj
+    requires:
+      count: 1
+    options:
+      invalidate_on_push: true
+      methods:
+        allow_author: true
+        comments:
+          - FORCE_COMMIT
+        github_review: true
   - name: one approval from jacksontj
     requires:
       count: 1
