@@ -7,21 +7,20 @@ policy:
       - FORCE_COMMIT
 
 approval_rules:
+  # rule to allow for forcible commits regardless of regular review process
   - name: FORCE_COMMIT
-    if:
-      has_author_in:
-        users:
-          - jacksontj
     requires:
       count: 1
+      # define a list of users who are allowed to give this sort of commit, likely a team in github
       users: ["jacksontj"]
     options:
-      invalidate_on_push: true
       allow_author: true
       allow_contributor: true
       methods:
         comments:
           - FORCE_COMMIT
+
+  # require an approval from a person/team -- using the github review process (to avoid string accidental matching)
   - name: one approval from jacksontj
     requires:
       count: 1
@@ -30,6 +29,8 @@ approval_rules:
       invalidate_on_push: true
       methods:
         github_review: true
+
+  # different rule for a specific subpath
   - name: if release
     if:
       changed_files:
