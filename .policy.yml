@@ -14,6 +14,7 @@ approval_rules:
           - jacksontj
     requires:
       count: 1
+      users: ["jacksontj"]
     options:
       invalidate_on_push: true
       allow_author: true
