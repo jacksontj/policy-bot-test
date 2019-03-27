@@ -1,6 +1,6 @@
 policy:
   approval:
-    - or
+    - or:
       - and:
         - one approval from jacksontj
         - if release
