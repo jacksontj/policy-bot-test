@@ -17,6 +17,7 @@ approval_rules:
     options:
       invalidate_on_push: true
       allow_author: true
+      allow_contributor: true
       methods:
         comments:
           - FORCE_COMMIT
