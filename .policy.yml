@@ -11,8 +11,8 @@ approval_rules:
   - name: FORCE_COMMIT
     requires:
       count: 1
-      # define a list of users who are allowed to give this sort of commit, likely a team in github
-      users: ["jacksontj"]
+      # only some users are allowed to give this sort of commit
+      teams: ["ContextLogic/core-team"]
     options:
       allow_author: true
       allow_contributor: true
