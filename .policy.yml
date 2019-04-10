@@ -4,6 +4,7 @@ policy:
       - and:
         - one approval from jacksontj
         - if release
+        - if base
       - FORCE_COMMIT
 
 approval_rules:
@@ -36,6 +37,20 @@ approval_rules:
       changed_files:
         paths:
           - "release/.*"
+    requires:
+      count: 1
+      users: ["jacksontj"]
+    options:
+      invalidate_on_push: true
+      methods:
+        github_review: true
+
+  # different rule for a specific subpath
+  - name: if base
+    if:
+      changed_files:
+        paths:
+          - "[^/]+"
     requires:
       count: 1
       users: ["jacksontj"]
